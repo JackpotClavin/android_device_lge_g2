@@ -7,6 +7,8 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Inherit device configuration
 $(call inherit-product, device/lge/g2/device.mk)
 
+$(call inherit-product-if-exists, vendor/lge/g2/g2-vendor.mk)
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := g2
 PRODUCT_NAME := cm_g2

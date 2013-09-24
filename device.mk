@@ -3,8 +3,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/lge/g2/g2-vendor.mk)
-
 DEVICE_PACKAGE_OVERLAYS += device/lge/g2/overlay
 
 # This device is xhdpi.  However the platform doesn't
@@ -21,6 +19,13 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=3
+
+PRODUCT_PACKAGES += \
+	libgenlock \
+	liboverlay \
+	hwcomposer.msm8974 \
+	gralloc.msm8974 \
+	copybit.msm8974
 
 PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/ramdisk/fstab.galbi:root/fstab.galbi \
