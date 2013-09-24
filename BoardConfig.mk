@@ -1,19 +1,69 @@
-USE_CAMERA_STUB := true
+#
+# Copyright (C) 2011 The Android Open-Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
-# inherit from the proprietary version
--include vendor/lg/g2/BoardConfigVendor.mk
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_SMP := true
+TARGET_CPU_VARIANT := krait
+TARGET_ARCH := arm
+TARGET_CPU_ABI := armeabi-v7a
+ARCH_ARM_HAVE_TLS_REGISTER := true
+
+# Krait optimizations
+TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
+TARGET_USE_KRAIT_PLD_SET := true
+TARGET_KRAIT_BIONIC_PLDOFFS := 10
+TARGET_KRAIT_BIONIC_PLDTHRESH := 10
+TARGET_KRAIT_BIONIC_BBTHRESH := 64
+TARGET_KRAIT_BIONIC_PLDSIZE := 64
 
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := msm8974
 
-# Platform
+BOARD_KERNEL_CMDLINE :=  console=ttyHSL0,115200,n8 androidboot.hardware=g2 user_debug=31 msm_rtb.filter=0x0
+BOARD_KERNEL_BASE :=  0x00000000
+#BOARD_FORCE_RAMDISK_ADDRESS := 0x05000000
+BOARD_KERNEL_PAGESIZE := 4096
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x05000000
+
+TARGET_KERNEL_CONFIG := g2-vzw-perf_defconfig
+TARGET_KERNEL_SOURCE := kernel/lge/g2
+
+TARGET_BOOTLOADER_BOARD_NAME := msm8974
 TARGET_BOARD_PLATFORM := msm8974
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
 
-# Flags
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE -DQCOM_BSP
+BOARD_EGL_CFG := device/lge/g2/egl.cfg
+
+#BOARD_USES_HGL := true
+USE_OPENGL_RENDERER := true
+TARGET_USES_ION := true
+TARGET_USES_OVERLAY := true
+TARGET_USES_SF_BYPASS := true
+TARGET_USES_C2D_COMPOSITION := true
+
+BOARD_BOOTIMAGE_PARTITION_SIZE := 23068672 # 22M
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 23068672 # 22M
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 880803840 # 840M
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 6189744128 # 5.9G
+BOARD_FLASH_BLOCK_SIZE := 131072
+
+-include vendor/lg/g2/BoardConfigVendor.mk
+
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_QCOM_DISPLAY_VARIANT := caf
 #TARGET_QCOM_MEDIA_VARIANT := caf
@@ -23,45 +73,12 @@ BOARD_USES_LEGACY_ALSA_AUDIO:= false
 TARGET_QCOM_AUDIO_VARIANT := caf
 #BOARD_USES_SRS_TRUEMEDIA := true
 
-BOARD_EGL_CFG := device/lge/g2/egl.cfg
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
 
-BOARD_USES_HGL := true
-#BOARD_USES_OVERLAY := true
-USE_OPENGL_RENDERER := true
-#TARGET_USES_ION := true
-TARGET_USES_OVERLAY := true
-TARGET_USES_SF_BYPASS := true
-TARGET_USES_C2D_COMPOSITION := true
+USE_CAMERA_STUB := true
 
-# Architecture
-TARGET_CPU_VARIANT := krait
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_SMP := true
-ARCH_ARM_HAVE_TLS_REGISTER := true
+# inherit from the proprietary version
 
-
-BOARD_KERNEL_CMDLINE :=  console=ttyHSL0,115200,n8 androidboot.hardware=g2 user_debug=31 msm_rtb.filter=0x0
-BOARD_KERNEL_BASE :=  0x00000000
-#BOARD_FORCE_RAMDISK_ADDRESS := 0x05000000
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x05000000
-
-BOARD_BOOTIMAGE_PARTITION_SIZE := 23068672 # 22M
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 23068672 # 22M
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 880803840 # 840M
-#BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 6189744128 # 5.9G
-BOARD_FLASH_BLOCK_SIZE := 131072
-
-#TARGET_PREBUILT_KERNEL := device/lge/g2/kernAl
-
-TARGET_KERNEL_CONFIG := g2-vzw-perf_defconfig
-TARGET_KERNEL_SOURCE := kernel/lge/g2
-
-#TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 
 # Recovery:Start
 
