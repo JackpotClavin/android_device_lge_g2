@@ -161,7 +161,7 @@ case "$usb_config" in
 
     "") #USB persist config not set, select default configuration
 
-    setprop persist.sys.usb.config boot
+    setprop persist.sys.usb.config boot,adb
 
     ;;
 

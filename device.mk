@@ -20,7 +20,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=3
+    sys.usb.config=boot,adb
 
 PRODUCT_PACKAGES += \
 	libgenlock \
