@@ -36,7 +36,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/snd_soc_msm_Taiko:system/etc/snd_soc_msm/snd_soc_msm_Taiko \
     $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.bak \
+    $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml
 
