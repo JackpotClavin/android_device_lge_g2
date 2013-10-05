@@ -16,7 +16,7 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 LOCAL_PATH := $(LOCAL_PATH)
 
-PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -40,7 +40,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml
 
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.galbi:root/fstab.galbi \
     $(LOCAL_PATH)/rootdir/init.g2.blue.sh:root/init.g2.blue.sh \
     $(LOCAL_PATH)/rootdir/init.g2.rc:root/init.g2.rc \
