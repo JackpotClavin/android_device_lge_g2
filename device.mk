@@ -28,7 +28,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     audio_policy.msm8974 \
-    audio.primary.msm8974
+    audio.primary.msm8974 \
+    libaudio-resampler \
+    libdashplayer
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/snd_soc_msm_Taiko:system/etc/snd_soc_msm/snd_soc_msm_Taiko \
