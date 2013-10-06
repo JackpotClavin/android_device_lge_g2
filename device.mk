@@ -80,6 +80,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.galbi.thermal_conf.sh:system/etc/init.galbi.thermal_conf.sh \
     $(LOCAL_PATH)/rootdir/etc/init.galbi.wifi.sh:system/etc/init.galbi.wifi.sh
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
+    $(LOCAL_PATH)/FTM_PowerTable.XML:system/etc/wifi/FTM_PowerTable.XML \
+    $(LOCAL_PATH)/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
+    $(LOCAL_PATH)/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.build.target_operator=VZW \
     ro.build.target_country=US \
