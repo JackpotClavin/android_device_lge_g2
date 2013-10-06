@@ -19,9 +19,6 @@ LOCAL_PATH := $(LOCAL_PATH)
 PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    sys.usb.config=boot,adb
-
 PRODUCT_PACKAGES += \
     libgenlock \
     liboverlay \
@@ -42,6 +39,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.galbi:root/fstab.galbi \
+    $(LOCAL_PATH)/rootdir/init:root/init \
     $(LOCAL_PATH)/rootdir/init.g2.blue.sh:root/init.g2.blue.sh \
     $(LOCAL_PATH)/rootdir/init.g2.rc:root/init.g2.rc \
     $(LOCAL_PATH)/rootdir/init.g2_product.rc:root/init.g2_product.rc \
