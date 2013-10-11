@@ -220,6 +220,12 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.qc.sdk.izat.service_mask=0x0 \
     persist.gps.qc_nlp_in_use=0
 
+PRODUCT_PACKAGES += \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc
+
 # Inherit from the common Open Source product configuration
 $(call inherit-product, build/target/product/full_base_telephony.mk)
 
