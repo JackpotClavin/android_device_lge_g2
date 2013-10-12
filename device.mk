@@ -249,6 +249,15 @@ PRODUCT_PACKAGES += \
     libOmxEvrcEnc \
     libOmxQcelp13Enc
 
+PRODUCT_PACKAGES += \
+    libmm-omxcore \
+	libdivxdrmdecrypt \
+	libOmxVdec \
+	libOmxVenc \
+	libOmxCore \
+	libstagefrighthw \
+	libc2dcolorconvert
+
 # Inherit from the common Open Source product configuration
 $(call inherit-product, build/target/product/full_base_telephony.mk)
 
