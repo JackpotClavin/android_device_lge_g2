@@ -258,6 +258,9 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libc2dcolorconvert
 
+PRODUCT_PACKAGES += \
+    lights.msm8974
+
 # Inherit from the common Open Source product configuration
 $(call inherit-product, build/target/product/full_base_telephony.mk)
 
