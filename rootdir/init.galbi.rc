@@ -162,8 +162,8 @@ on boot
 # LGE_CHANGE_E, [BT][younghyun.kwon@lge.com], 2013-04-10
 
     # vibrator
-    chown system system /sys/class/timed_output/vibrator/amp
-    chmod 0660 /sys/class/timed_output/vibrator/amp
+    chown system system /sys/class/misc/tspdrv/enable
+    chmod 0660 /sys/class/misc/tspdrv/enable
     # led
     chown system system /sys/class/leds/button-backlight1/brightness
     chown system system /sys/class/leds/button-backlight2/brightness
