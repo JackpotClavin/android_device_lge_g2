@@ -32,6 +32,12 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libdashplayer
 
+# loki
+PRODUCT_PACKAGES += \
+    loki_patch \
+    loki_flash \
+    loki.sh
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/snd_soc_msm_Taiko:system/etc/snd_soc_msm/snd_soc_msm_Taiko \
     $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf \
